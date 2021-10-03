@@ -49,6 +49,9 @@ pipeline {
     }
 
     stage('UAT Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Deploy to UAT'
       }
@@ -60,7 +63,10 @@ pipeline {
       }
     }
 
-    stage('Prod Deply') {
+    stage('Prod Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Deploy to Production'
       }

@@ -58,6 +58,9 @@ pipeline {
     }
 
     stage('UAT Certify') {
+      when {
+        branch 'master'
+      }
       steps {
         input(message: 'Can we proceed to Prod?', ok: 'Yes')
       }
